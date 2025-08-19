@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varadhi - Login/Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+   
+.message-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    
+    position: relative; /* Needed for z-index to work */
+    z-index: 1000; /* High z-index to bring it to front */
+}
+
+.message-box.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb;
+}
+
+/* New style for dynamically hidden/shown fields */
+.register-field {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0; /* Hidden by default */
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.register-field.visible {
+    max-height: 80px; /* Adjust based on content height */
+    opacity: 1;
+    margin-bottom: 20px; /* Standard margin */
+}
+
+/* Added for header button spacing */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds space between buttons */
+}
+
+.register-field {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0; /* Hidden by default */
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.register-field.visible {
+    max-height: 80px; /* Adjust based on content height */
+    opacity: 1;
+    margin-bottom: 20px; /* Standard margin */
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"], /* Added for email field */
+.form-group input[type="tel"] /* Added for mobile number field */
+{
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+</style>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <span class="logo-text"><a href="index.html">Varadhi</a>
+                </span>
+           
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for services..." class="search-input">
+                <button id="search-button" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="donor.html" class="header-button">Donor</a>
+           
+            <a href="login.html" class="header-button active">Login</a>
+            <a href="about.html" class="header-button active">About Us</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-content">
+            <h2 id="auth-title">Login to Your Account</h2>
+            <form id="auth-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <!-- REMOVED: style="display: none;" -->
+                <div class="form-group register-field">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <!-- REMOVED: style="display: none;" -->
+                <div class="form-group register-field">
+                    <label for="mobileNumber">Mobile Number:</label>
+                    <input type="tel" id="mobileNumber" name="mobileNumber">
+                </div>
+                <button type="submit" class="submit-button" id="auth-submit-button">Login</button>
+            </form>
+            <p id="auth-toggle-text">Don't have an account? <a href="#" id="toggle-auth-mode">Register here</a>.</p>
+            <div id="message-box" class="message-box" style="display: none;"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</html>

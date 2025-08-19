@@ -1,0 +1,458 @@
+/* frontend/style.css */
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 8500px;
+    margin: 5px auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a2a47; /* Dark blue */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.logo-text a {
+  text-decoration: none; /* removes underline */
+  color: lightcyan;        /* inherits current text color */
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.header-logo {
+    border-radius: 8px; /* Rounded corners for logo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-center {
+    flex-grow: 1; /* Allows search bar to take available space */
+    display: flex;
+    justify-content: center;
+    margin: 10px 20px; /* Adjust margin for spacing */
+}
+
+.search-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px; /* Pill shape for search bar */
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.search-input {
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    flex-grow: 1;
+    outline: none;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 0 25px 25px 0; /* Match search container border-radius */
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.header-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.header-button.active {
+    background-color: #e0f2f1; /* Light cyan for active page */
+    color: #1a2a47;
+    font-weight: 600;
+}
+
+
+/* Section Styling */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+}
+
+section h2 {
+    color: #1a2a47;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    
+    border-radius: 2px;
+}
+
+/* Distinct Services Section (Home Page) */
+.distinct-services-section {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.service-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.service-button {
+    background-color: #e0f2f1; /* Light cyan */
+    color: #1a2a47;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    overflow: hidden;
+}
+
+.service-button:hover {
+    background-color: #c8e6e5; /* Slightly darker cyan */
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Home Content Section */
+.home-content {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f8ff; /* Light blue background */
+    border-radius: 10px;
+    border: 1px solid #d0e8f8;
+}
+
+.home-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Services Display Section (services.html) */
+.services-display-section {
+    min-height: 400px; /* Ensure section has some height */
+}
+
+.service-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px; /* Ensure cards have consistent height */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: #007bff; /* Blue for service name */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.service-card p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.service-card p strong {
+    color: #333;
+}
+
+.loading-message,
+.no-results-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    padding: 50px 0;
+}
+
+/* Placeholder pages content */
+.page-content {
+    text-align: center;
+    padding: 50px;
+}
+
+.page-content h2 {
+    color: #1a2a47;
+    margin-bottom: 20px;
+}
+
+.page-content p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.page-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+}
+
+/* Login Form Styles */
+.login-form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="tel"]
+{
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Make button full width of form */
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Message Box Styles */
+.message-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+    z-index: 1000;
+}
+
+.message-box.success {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+    border: 1px solid #f5c6cb;
+}
+
+/* New style for dynamically hidden/shown fields */
+.register-field {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0; /* Hidden by default */
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+.register-field.visible {
+    max-height: 80px; /* Adjust based on content height */
+    opacity: 1;
+    margin-bottom: 20px; /* Standard margin */
+}
+
+/* Added for header button spacing */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds space between buttons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 15px;
+    }
+
+    .header-center {
+        width: 100%;
+        order: 3; /* Push search bar to a new line */
+        margin: 15px 0 5px 0;
+    }
+
+    .header-right {
+        order: 2; /* Move buttons below logo/varadhi */
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .header-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .search-container {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .service-buttons-grid {
+        grid-template-columns: 1fr; /* Stack buttons vertically on small screens */
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.2em;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.5em;
+    }
+
+    .header-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .search-input {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .search-button {
+        padding: 10px 15px;
+    }
+}

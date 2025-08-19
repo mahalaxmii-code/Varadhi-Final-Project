@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varadhi - About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts - Inter for consistent typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+  
+
+/* Achievements Section Styles */
+
+
+.achievements-section {
+    background-color: #f0f8ff; /* Light blue background */
+    border: 1px solid #d0e8f8;
+  margin-top: 5px auto;
+  
+}
+
+.achievement-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.achievement-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.achievement-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-bottom: 1px solid #eee;
+}
+
+.achievement-item h3 {
+    color: #1a2a47;
+    font-size: 1.3em;
+    margin: 15px 10px 5px;
+}
+
+.achievement-item p {
+    font-size: 0.95em;
+    color: #666;
+    padding: 0 15px 20px;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: #e0f2f1; /* Light cyan background */
+    border: 1px solid #c8e6e5;
+    margin: 5px auto;
+
+
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 8px;
+    color: #1a2a47;
+}
+
+.social-links {
+    margin-top: 25px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #1a2a47;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    color: #007bff;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments for achievements */
+@media (max-width: 768px) {
+    .achievement-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    .achievement-img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievement-img {
+        height: 150px;
+    }
+    .achievement-item h3 {
+        font-size: 1.1em;
+    }
+    .achievement-item p {
+        font-size: 0.9em;
+    }
+    .social-icon {
+        font-size: 1.8em;
+        margin: 0 10px;
+    }
+}
+
+
+
+/* About Page Layout (New Grid Container) */
+.about-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* 1 part for sidebar, 3 parts for main content */
+    gap: 5px; /* Space between columns */
+    align-items: start; /* Aligns content to the top of each grid cell */
+    margin-top: 5px auto; /* Adjust top margin for the whole layout */
+}
+
+/* Left Sidebar Styles */
+.left-sidebar {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    position: sticky; /* Makes the sidebar stick when scrolling */
+    top: 20px; /* Distance from the top of the viewport when sticky */
+    align-self: start; /* Ensures it starts at the top of its grid area */
+}
+
+.sidebar-section {
+    margin-bottom: 30px; /* Space between sections in the sidebar */
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0; /* No bottom margin for the last section */
+}
+
+.sidebar-section h2 {
+    font-size: 1.6em;
+    color: #1a2a47;
+    margin-bottom: 15px;
+    text-align: left; /* Override general h2 center alignment */
+    position: relative; /* For the underline effect */
+}
+
+.sidebar-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0; /* Align underline to the left */
+    transform: translateX(0); /* Remove center transform */
+    bottom: -5px; /* Adjust position */
+    width: 50px; /* Shorter underline for sidebar titles */
+    height: 3px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}
+
+/* Updates List Styles */
+.updates-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.updates-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.updates-list li:last-child {
+    margin-bottom: 0;
+}
+
+.updates-list li strong {
+    color: #1a2a47;
+    display: block; /* Make the strong tag a block element for spacing */
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+/* More Info Links Styles */
+.info-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-links li {
+    margin-bottom: 10px;
+}
+
+.info-links a {
+    display: block; /* Make links block-level for padding */
+    padding: 8px 10px;
+    background-color: #e0f2f1;
+    color: #1a2a47;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.info-links a:hover {
+    background-color: #c8e6e5;
+    transform: translateX(5px);
+}
+
+/* Responsive Adjustments for About Page Layout */
+@media (max-width: 992px) {
+    .about-page-layout {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 20px; /* Reduce gap when stacked */
+    }
+    .left-sidebar {
+        position: static; /* Remove sticky behavior on smaller screens */
+        top: auto; /* Reset top property */
+    }
+    .sidebar-section h2 {
+        text-align: center; /* Center sidebar titles when stacked */
+    }
+    .sidebar-section h2::after {
+        left: 50%;
+        transform: translateX(-50%); /* Center underline when stacked */
+    }
+}
+
+/* Ensure main content sections still have proper margins when stacked */
+.main-content-area .page-content:first-child {
+    margin-top: 5px; /* Remove extra top margin if it's the first element in main-content-area */
+}
+</style>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <span class="logo-text"><a href="index.html">Varadhi</a>
+
+            </span>
+
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for services..." class="search-input">
+                <button id="search-button" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="header-right">
+        
+            <a href="donor.html" class="header-button">Donor</a>
+            <a href="login.html" class="header-button">Login</a>
+            <a href="about.html" class="header-button active">About Us</a>
+        </div>
+    </header>
+
+    <main class="container about-page-layout">
+        <!-- Left Sidebar Container -->
+        <aside class="left-sidebar">
+            <section class="sidebar-section updates-section">
+                <h2>Latest Updates</h2>
+                <ul class="updates-list">
+                    <li>
+                        <strong>July 3, 2025: New Partnership</strong>
+                        <p>Excited to announce our collaboration with "Helping Hands Foundation" to expand our reach in rural areas.</p>
+                    </li>
+                    <li>
+                        <strong>June 15, 2025: Volunteer Drive</strong>
+                        <p>Successfully recruited 50 new volunteers for our upcoming summer programs. Thank you to all applicants!</p>
+                    </li>
+                    <li>
+                        <strong>May 28, 2025: Impact Report Released</strong>
+                        <p>Our annual impact report is now available, highlighting key achievements and future goals. <a href="#">Read more</a></p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section more-info-section">
+                <h2>More Information</h2>
+                <p>Learn more about our governance, financial transparency, and how we ensure your contributions make a real difference.</p>
+                <ul class="info-links">
+                    <li><a href="#">Our Governance</a></li>
+                    <li><a href="#">Financial Reports</a></li>
+                    <li><a href="#">Volunteer Opportunities</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            <section class="page-content">
+                <h2>About Varadhi</h2>
+                <p>Varadhi, meaning "bridge" in Sanskrit, is dedicated to connecting individuals and communities with essential services and support networks. Our platform acts as a vital link, ensuring that help reaches those who need it most, efficiently and effectively.</p>
+                <p>Founded on the principles of compassion and community empowerment, Varadhi aims to simplify the process of finding and offering aid. Whether it's connecting people with free food, medical assistance, educational resources, or shelter, we strive to make a tangible difference in society.</p>
+                <p>Our mission extends beyond just providing information; we aspire to build a resilient and supportive ecosystem where every individual has access to the resources necessary for a dignified life.</p>
+                <h3>Our Vision</h3>
+                <p>To create a seamless and accessible bridge between those in need and those who can provide support, fostering a stronger, more compassionate community for everyone.</p>
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Empathy:</strong> Understanding and sharing the feelings of others.</li>
+                    <li><strong>Integrity:</strong> Operating with honesty and strong moral principles.</li>
+                    <li><strong>Accessibility:</strong> Ensuring services are easy to find and use for all.</li>
+                    <li><strong>Community:</strong> Building strong, supportive networks.</li>
+                    <li><strong>Innovation:</strong> Continuously improving our platform and services.</li>
+                </ul>
+            </section>
+
+            <section class="page-content achievements-section">
+                <h2>Our Achievements</h2>
+                <p>Over the years, Varadhi has proudly reached significant milestones in community service. Here are some highlights of our impact:</p>
+                <div class="achievement-gallery">
+                    <div class="achievement-item">
+                        <img src="https://placehold.co/400x250/E0F2F1/1A2A47?text=10K+Meals+Served" alt="Achievement: 10,000 Meals Served" class="achievement-img">
+                        <h3>10,000+ Meals Served</h3>
+                        <p>Providing nourishing meals to those facing food insecurity.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <img src="https://placehold.co/400x250/E0F2F1/1A2A47?text=5K+People+Sheltered" alt="Achievement: 5,000 People Sheltered" class="achievement-img">
+                        <h3>5,000+ People Sheltered</h3>
+                        <p>Offering safe and dignified temporary housing solutions.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <img src="https://placehold.co/400x250/E0F2F1/1A2A47?text=2K+Students+Educated" alt="Achievement: 2,000 Students Educated" class="achievement-img">
+                        <h3>2,000+ Students Educated</h3>
+                        <p>Supporting access to quality education for underprivileged children.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <img src="https://placehold.co/400x250/E0F2F1/1A2A47?text=1K+Medical+Camps" alt="Achievement: 1,000 Medical Camps" class="achievement-img">
+                        <h3>1,000+ Medical Camps</h3>
+                        <p>Organizing health check-ups and medical aid in remote areas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-content contact-section">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Whether you have questions, feedback, or want to partner with us, please reach out.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@varadhi.org">info@varadhi.org</a></p>
+                    <p><i class="fas fa-phone"></i> Phone: +1 (123) 456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Bridge Street, Community City, 54321</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

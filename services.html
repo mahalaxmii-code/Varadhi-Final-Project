@@ -1,0 +1,46 @@
+<!-- frontend/services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varadhi - Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <span class="logo-text"><a href="index.html">Varadhi</a>
+            </span>
+
+        </div>
+        <div class="header-center">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for services..." class="search-input">
+                <button id="search-button" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="donor.html" class="header-button">Donor</a>
+            <a href="login.html" class="header-button">Login</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="services-display-section">
+            <h2 id="services-title">All Services</h2>
+            <div id="service-list-container" class="service-list-container">
+                <p id="loading-message" class="loading-message">Loading services...</p>
+                <p id="no-results-message" class="no-results-message" style="display: none;">No services found for your query.</p>
+                <!-- Services will be dynamically loaded here by script.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
